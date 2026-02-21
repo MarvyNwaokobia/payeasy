@@ -281,6 +281,9 @@ export default function BrowsePage() {
                         {isDropdownOpen && (
                             <div className="absolute right-0 top-full pt-2 w-48 z-50">
                                 <div className="bg-white rounded-md shadow-lg py-1 border border-gray-100">
+                                    <Link href="/dashboard" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        Dashboard
+                                    </Link>
                                     <Link href="/auth/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                                         Login
                                     </Link>
