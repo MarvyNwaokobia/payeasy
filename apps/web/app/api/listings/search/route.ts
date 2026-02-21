@@ -96,8 +96,8 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    const sortColumn = params.sortBy === 'price' ? 'rent_xlm' : (params.sortBy || 'created_at')
-    query = query.order(sortColumn, { ascending: params.order === 'asc' })
+    const sortColumn = params.sortBy === "price" ? "rent_xlm" : params.sortBy || "created_at";
+    query = query.order(sortColumn, { ascending: params.order === "asc" });
 
     const offset = (params.page! - 1) * params.limit!;
     query = query.range(offset, offset + params.limit! - 1);
