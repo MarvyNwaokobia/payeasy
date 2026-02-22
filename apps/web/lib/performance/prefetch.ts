@@ -172,9 +172,10 @@ class PrefetchManager {
       return;
     }
 
-    // Return existing pending request
+    // Wait for existing pending request
     if (this.pendingRequests.has(url)) {
-      return this.pendingRequests.get(url);
+      await this.pendingRequests.get(url);
+      return;
     }
 
     this.metrics.totalPrefetches++;
@@ -383,7 +384,6 @@ export function useNetworkAwarePrefetch(
 export function usePrefetchManager() {
   const manager = PrefetchManager.getInstance();
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return {
     prefetch: (url: string, options?: { priority?: number; ttl?: number }) =>
       manager.prefetch(url, options),

@@ -41,7 +41,8 @@ export async function POST(req: NextRequest) {
 
         await trackReportGeneration(userId, type, format, JSON.stringify(filters || {}));
 
-        return new NextResponse(fileBuffer, {
+        const body: BodyInit = Buffer.isBuffer(fileBuffer) ? new Uint8Array(fileBuffer) : fileBuffer;
+        return new NextResponse(body, {
             status: 200,
             headers: {
                 'Content-Type': contentType,
