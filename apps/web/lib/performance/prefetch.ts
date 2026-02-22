@@ -172,7 +172,7 @@ class PrefetchManager {
       return;
     }
 
-    // Return existing pending request
+    // Wait for existing pending request
     if (this.pendingRequests.has(url)) {
       await this.pendingRequests.get(url);
       return;
