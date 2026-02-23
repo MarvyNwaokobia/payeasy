@@ -208,7 +208,7 @@ export default function MapView({
     return (
         <MapGL
             ref={mapRef}
-            {...viewState}
+            initialViewState={viewState}
             onMove={handleMove}
             onLoad={handleLoad}
             mapboxAccessToken={MAPBOX_TOKEN}
@@ -302,6 +302,8 @@ export default function MapView({
                             bedrooms: selectedListing.bedrooms || 0,
                             bathrooms: selectedListing.bathrooms || 0,
                             image: selectedListing.image || '/images/placeholder.jpg',
+                            // Preserve any other properties if they match ListingPopupData
+                            ...(selectedListing as Partial<ListingPopupData>)
                         }}
                         onClose={() => setSelectedListing(null)}
                     />
