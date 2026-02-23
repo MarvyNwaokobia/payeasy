@@ -289,6 +289,8 @@ const config: Config = {
         'spin-slow': 'spin 3s linear infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'bounce-slow': 'bounce 2s infinite',
+        'slide-in-right': 'slideInRight 0.3s ease-out',
+        'shimmer': 'shimmer 2s ease-in-out infinite',
       },
       
       keyframes: {
@@ -331,6 +333,10 @@ const config: Config = {
         scaleOut: {
           '0%': { transform: 'scale(1)', opacity: '1' },
           '100%': { transform: 'scale(0.95)', opacity: '0' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
       },
       
