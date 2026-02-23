@@ -84,3 +84,27 @@ export {
   ButtonLoadingExamples,
   CompleteLoadingExample,
 } from './LoadingStates'
+
+// Gallery Components
+export {
+  Gallery,
+  GalleryThumbnails,
+  type GalleryProps,
+  type GalleryImage,
+  type GalleryThumbnailsProps,
+} from './Gallery'
+
+export {
+  Lightbox,
+  type LightboxProps,
+} from './Lightbox'
+
+export {
+  BasicGallery,
+  GalleryWithoutThumbnails,
+  GalleryWithoutLightbox,
+  SquareGallery,
+  VideoAspectGallery,
+  SingleImageGallery,
+  ResponsiveGridGallery,
+} from './GalleryExamples'
