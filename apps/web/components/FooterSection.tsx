@@ -10,7 +10,7 @@ export interface FooterLinkItem {
 }
 
 export interface FooterSectionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'title'> {
-  title: React.ReactNode
+  title?: React.ReactNode
   description?: React.ReactNode
   links?: FooterLinkItem[]
   listClassName?: string
