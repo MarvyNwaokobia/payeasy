@@ -13,7 +13,7 @@ CREATE INDEX IF NOT EXISTS idx_saved_searches_user_id ON saved_searches(user_id)
 
 CREATE TRIGGER update_saved_searches_updated_at
   BEFORE UPDATE ON saved_searches
-  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+  FOR EACH ROW EXECUTE FUNCTION trigger_set_updated_at();
 
 ALTER TABLE saved_searches ENABLE ROW LEVEL SECURITY;
 
